@@ -1,0 +1,46 @@
+{
+  "name": "mockit-ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "bulma-extensions": "^6.2.4",
+    "faker": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "react": "v16.8.3",
+    "react-dom": "v16.8.3",
+    "react-json-editor-ajrm": "^2.5.9",
+    "react-scripts": "3.0.0",
+    "scrollreveal": "^4.0.5",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "dev": "PORT=5000 REACT_APP_MOCKIT_SERVER_URL=http://localhost:3000 REACT_APP_MOCKIT_API_URL=http://localhost:4000 react-scripts start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "REACT_APP_MOCKIT_API_URL=mockit.aden-dev.asia react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/serviceWorker.js",
+      "!src/index.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "dom-testing-library": "^3.19.1",
+    "jest-dom": "^3.1.3",
+    "nock": "^10.0.6",
+    "react-testing-library": "^6.1.2"
+  }
+}

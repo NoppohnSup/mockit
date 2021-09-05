@@ -1,0 +1,60 @@
+{
+  "settings": {
+    "features": {
+      "chaosMonkey": false,
+      "cors": true,
+      "authentication": false
+    },
+    "authentication": {
+      "username": "test",
+      "password": "test"
+    }
+  },
+  "routes": [
+    {
+      "id": "f60a06f9-71b4-4458-91c9-b6adb8114bda",
+      "route": "/",
+      "httpMethod": "GET",
+      "statusCode": "200",
+      "delay": "0",
+      "payload": {
+        "test": true
+      },
+      "jsonFormat": true
+    },
+    {
+      "id": "94f5367e-7e7d-4488-8dab-b53fa9933afb",
+      "route": "/example_template",
+      "httpMethod": "POST",
+      "statusCode": "200",
+      "delay": "0",
+      "payload": {
+        "it_will_return": [
+          "{{jsonPath request.body '$.ob_number'}}",
+          "{{jsonPath request.body '$.ob_line_items[0].sku'}}",
+          "{{jsonPath request.body '$.ob_line_items[0].qty'}}",
+          "{{jsonPath request.body '$.ob_line_items[1].sku'}}",
+          "{{jsonPath request.body '$.ob_line_items[1].qty'}}",
+          "{{jsonPath request.body '$.customer'}}",
+          "{{now}}",
+          "{{now format='YYYY-MM-DD hh:mm:ss'}} with moment.js format"
+        ],
+        "when_use_this_request_body": {
+          "customer": "Aden",
+          "ob_number": "TEST_OBNUMBER_001",
+          "ob_line_items": [
+            {
+              "sku": "SKU001",
+              "qty": 1
+            },
+            {
+              "sku": "SKU002",
+              "qty": 99
+            }
+          ]
+        }
+      },
+      "jsonFormat": true
+    }
+  ]
+}
